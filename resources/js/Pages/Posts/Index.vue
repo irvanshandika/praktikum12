@@ -43,7 +43,7 @@ function destroy(id) {
                 <td class="px-6 py-4 whitespace-nowrap">{{ post.judul }}</td>
                 <td class="px-6 py-4 whitespace-nowrap">{{ post.kategori }}</td>
                 <td class="px-6 py-4 whitespace-nowrap">{{ post.konten }}</td>
-                <td class="px-6 py-4 whitespace-nowrap">{{ post.creted_at }}</td>
+                <td class="px-6 py-4 whitespace-nowrap">{{ post.created_at }}</td>
                 <td class="px-6 py-4 whitespace-nowrap">{{ post.penulis }}</td>
                 <td class="px-6 py-4 whitespace-nowrap">
                   <div class="flex items-center">
