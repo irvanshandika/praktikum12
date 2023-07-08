@@ -30,7 +30,7 @@ defineProps({
   </div>
   <div class="relative sm:flex sm:justify-end sm:items-center min-h-screen bg-dots-darker bg-center mr-11 selection:bg-red-500 selection:text-white">
     <div v-if="canLogin" class="sm:fixed sm:top-0 sm:right-0 p-6 text-right">
-      <Link v-if="$page.props.auth.user" :href="route('posts')" class="font-semibold text-gray-600 hover:text-gray-900 focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Dashboard</Link>
+      <Link v-if="$page.props.auth.user" :href="route('dashboard')" class="font-semibold text-gray-600 hover:text-gray-900 focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Dashboard</Link>
       <template v-else>
         <div class="mr-11">
           <Link :href="route('login')" class="bg-blue-500 hover:bg-blue-400 px-6 py-2 rounded-lg font-semibold text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Log in</Link>
