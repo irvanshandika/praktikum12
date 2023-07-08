@@ -47,8 +47,8 @@ function destroy(id) {
                 <td class="px-6 py-4 whitespace-nowrap">{{ post.penulis }}</td>
                 <td class="px-6 py-4 whitespace-nowrap">
                   <div class="flex items-center">
-                    <a :href="route('posts.edit', post.id)" class="mr-2 bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">Edit </a>
-                    <button @click="destroy(post.id)" tabIndex="-1" type="button" className="mx-1 px-4 py-2 text-sm text-white bg-red-500 rounded">Hapus</button>
+                    <Link :href="route('posts.edit', post.id)" class="mr-2 bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">Edit </Link>
+                    <button @click="destroy(post.id)" tabIndex="-1" type="button" className="mx-1 px-4 py-[10px] text-sm text-white bg-red-500 hover:bg-red-700 rounded">Hapus</button>
                   </div>
                 </td>
               </tr>
