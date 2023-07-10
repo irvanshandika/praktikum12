@@ -30,7 +30,7 @@ function destroy(id) {
                 <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">No</th>
                 <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Judul</th>
                 <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Kategori</th>
-                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Konten</th>
+                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider w-[400px]">Konten</th>
                 <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Tgl Terbit</th>
                 <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Penulis</th>
                 <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Aksi</th>
@@ -42,7 +42,7 @@ function destroy(id) {
                 <td class="px-6 py-4 whitespace-nowrap">{{ post.id }}</td>
                 <td class="px-6 py-4 whitespace-nowrap">{{ post.judul }}</td>
                 <td class="px-6 py-4 whitespace-nowrap">{{ post.kategori }}</td>
-                <td class="px-6 py-4 whitespace-nowrap">{{ post.konten }}</td>
+                <td class="px-6 py-4 whitespace-wrap">{{ post.konten }}</td>
                 <td class="px-6 py-4 whitespace-nowrap">{{ post.created_at }}</td>
                 <td class="px-6 py-4 whitespace-nowrap">{{ post.penulis }}</td>
                 <td class="px-6 py-4 whitespace-nowrap">

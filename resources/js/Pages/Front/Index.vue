@@ -100,8 +100,8 @@ const showingNavigationDropdown = ref(false);
       </div>
     </div>
   </nav>
-  <section class="hero">
-    <div class="container lg:mx-24 px-5 py-5">
+  <section class="hero lg:ml-[95px]">
+    <div class="container px-5 py-5">
       <div class="flex flex-col-reverse lg:flex-row items-center lg:py-5 lg:order-first">
         <div class="lg:w-6/12 lg:ms-10 text-black">
           <div v-for="item in skill" :key="item.id">
