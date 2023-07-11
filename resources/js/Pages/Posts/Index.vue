@@ -23,29 +23,29 @@ function destroy(id) {
         <div class="p-4 sm:p-4 bg-white shadow sm:rounded-lg">
           <Link :href="route('posts.create')" as="button" class="mr-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"> Tambah </Link>
         </div>
-        <div class="p-4 sm:p-8 bg-white shadow sm:rounded-lg">
-          <table class="min-w-full divide-y divide-gray-200">
-            <thead class="bg-gray-50">
+        <div class="relative overflow-x-auto">
+          <table class="w-full text-sm text-left text-gray-500">
+            <thead class="text-xs text-gray-700 uppercase bg-gray-50">
               <tr>
-                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">No</th>
-                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Judul</th>
-                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Kategori</th>
-                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider w-[400px]">Konten</th>
-                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Tgl Terbit</th>
-                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Penulis</th>
-                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Aksi</th>
+                <th scope="col" class="px-6 py-3">No</th>
+                <th scope="col" class="px-6 py-3">Judul</th>
+                <th scope="col" class="px-6 py-3">Kategori</th>
+                <th scope="col" class="px-6 py-3">Konten</th>
+                <th scope="col" class="px-6 py-3">Tgl Terbit</th>
+                <th scope="col" class="px-6 py-3">Penulis</th>
+                <th scope="col" class="px-6 py-3">Aksi</th>
               </tr>
             </thead>
-            <tbody class="bg-white divide-y divide-gray-200">
+            <tbody>
               <!-- Baris 1 -->
-              <tr v-for="post in posts">
-                <td class="px-6 py-4 whitespace-nowrap">{{ post.id }}</td>
-                <td class="px-6 py-4 whitespace-nowrap">{{ post.judul }}</td>
-                <td class="px-6 py-4 whitespace-nowrap">{{ post.kategori }}</td>
-                <td class="px-6 py-4 whitespace-wrap">{{ post.konten }}</td>
-                <td class="px-6 py-4 whitespace-nowrap">{{ post.created_at }}</td>
-                <td class="px-6 py-4 whitespace-nowrap">{{ post.penulis }}</td>
-                <td class="px-6 py-4 whitespace-nowrap">
+              <tr v-for="post in posts" class="bg-white border-b">
+                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap ">{{ post.id }}</th>
+                <td class="px-6 py-4">{{ post.judul }}</td>
+                <td class="px-6 py-4">{{ post.kategori }}</td>
+                <td class="px-6 py-4">{{ post.konten }}</td>
+                <td class="px-6 py-4">{{ post.created_at }}</td>
+                <td class="px-6 py-4">{{ post.penulis }}</td>
+                <td class="px-6 py-4">
                   <div class="flex items-center">
                     <Link :href="route('posts.edit', post.id)" class="mr-2 bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">Edit </Link>
                     <button @click="destroy(post.id)" tabIndex="-1" type="button" className="mx-1 px-4 py-[10px] text-sm text-white bg-red-500 hover:bg-red-700 rounded">Hapus</button>
