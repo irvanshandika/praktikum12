@@ -125,14 +125,14 @@ const showingNavigationDropdown = ref(false);
   </section>
   <section id="aboutme">
     <div class="flex flex-col gap-1 my-10 text-base text-black">
-      <h1 class="text-center mb-9 text-2xl">{{ about.judul }}</h1>
+      <h1 v-if="about && about.judul" class="text-center mb-9 text-2xl">{{ about.judul }}</h1>
       <div class="grid grid-cols-2 gap-12">
         <div class="p-2">
-          <p class="text-center">
+          <p v-if="about && about.konten" class="text-center">
             {{ about.konten }}
           </p>
         </div>
-        <div class="p-2">
+        <div v-if="about && about.konten" class="p-2">
           <p class="text-center">
             {{ about.konten }}
           </p>
