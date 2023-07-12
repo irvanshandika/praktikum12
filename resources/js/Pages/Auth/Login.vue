@@ -61,27 +61,11 @@ const submit = () => {
         </label>
       </div>
 
-      <!-- <div class="flex items-center justify-end mt-4">
+      <div class="flex items-center justify-end mt-4">
         <Link v-if="canResetPassword" :href="route('password.request')" class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
           Forgot your password?
         </Link>
-        <div class="flex items-center ml-4">
-          <p class="text-black mr-2">Didn't Have Account?</p>
-          <Link href="register" class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Register</Link>
-        </div>
-        <PrimaryButton class="ml-4" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">Log in</PrimaryButton>
-      </div> -->
-      <div class="flex items-center justify-end mt-4">
-        <div class="flex-grow"></div>
-        <div class="flex flex-col items-end space-y-2">
-          <Link v-if="canResetPassword" :href="route('password.request')" class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-            Forgot your password?
-          </Link>
-          <div class="flex items-center space-x-2">
-            <p class="text-black text-sm">Didn't Have Account?</p>
-            <Link href="register" class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Register</Link>
-          </div>
-        </div>
+
         <PrimaryButton class="ml-4" :class="{ 'opacity-25': form.processing }" :disabled="form.processing"> Log in </PrimaryButton>
       </div>
     </form>
