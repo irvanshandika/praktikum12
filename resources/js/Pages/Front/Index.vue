@@ -100,42 +100,73 @@ const showingNavigationDropdown = ref(false);
       </div>
     </div>
   </nav>
-  <section class="hero lg:ml-[95px]">
-    <div class="container px-5 py-5">
-      <div class="flex flex-col-reverse lg:flex-row items-center lg:py-5 lg:order-first">
-        <div class="lg:w-6/12 lg:ms-10 text-black">
-          <div v-for="item in skill" :key="item.id">
-            <h1 v-if="item && item.judul" class="text-4xl font-bold leading-tight mb-3">{{ item.judul }}</h1>
-            <p v-if="item && item.konten" class="text-lg">
-              {{ item.konten }}
-            </p>
-          </div>
-          <div class="grid grid-cols-1 gap-2 md:flex md:justify-start">
-            <button type="button" class="bg-blue-500 hover:bg-blue-400 text-black rounded-lg px-4 py-2 mt-7">Primary</button>
-            <button type="button" class="bg-gray-300 hover:bg-gray-200 text-black rounded-lg px-4 py-2 mt-7">Default</button>
+  <section class="bg-white">
+    <div class="container mx-auto px-5 py-5">
+      <div class="py-1 px-4 mx-auto max-w-screen-xl lg:py-16 grid lg:grid-cols-2 gap-12 lg:gap-16">
+        <div class="flex flex-col justify-center">
+          <h1 class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl">
+            Halo 👋🏻 Perkenalkan Aku Irvan
+          </h1>
+          <p class="mb-8 text-lg font-normal text-gray-500 lg:text-xl">
+            Mahasiswa Universitas AMIKOM Yogyakarta dan menggambil jurusan S1 Informatika
+          </p>
+          <div class="flex flex-col space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4">
+            <a href="#" class="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300">
+              Get started
+              <svg class="w-3.5 h-3.5 ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
+              </svg>
+            </a>
+            <a href="#" class="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-gray-900 rounded-lg border border-gray-300 hover:bg-gray-100 focus:ring-4 focus:ring-gray-100"> Learn more </a>
           </div>
         </div>
-        <div class="lg:w-6/12">
-          <div class="mx-auto lg:w-[400px] lg:h-[400px]">
-            <LottieAnimation :animation-data="WatermelonJSON" :auto-play="true" :height="100" :loop="true" :speed="1" ref="anim" />
-          </div>
+        <div>
+          <LottieAnimation :animation-data="WatermelonJSON" :auto-play="true" :height="100" :loop="true" :speed="1" ref="anim" />
         </div>
       </div>
     </div>
   </section>
-  <section id="aboutme">
-    <div class="flex flex-col gap-1 my-10 text-base text-black">
-      <h1 v-if="about && about.judul" class="text-center mb-9 text-2xl">{{ about.judul }}</h1>
-      <div class="grid grid-cols-2 gap-12">
-        <div class="p-2">
-          <p v-if="about && about.konten" class="text-center">
-            {{ about.konten }}
-          </p>
+  <section class="bg-grey-50" id="aboutme">
+    <div class="mx-auto max-w-screen-xl container flex flex-col items-center py-16 md:py-20 lg:flex-row">
+      <div class="w-full text-center sm:w-3/4 lg:w-3/5 lg:text-left">
+        <h2 class="font-header text-4xl font-semibold uppercase text-primary sm:text-5xl lg:text-6xl">Who am I?</h2>
+        <h4 v-if="about && about.judul" class="pt-6 font-header text-xl font-medium text-black sm:text-2xl lg:text-3xl">{{ about.judul }}</h4>
+        <p v-if="about && about.konten" class="pt-6 font-body leading-relaxed text-grey-20">{{ about.konten }}</p>
+        <div class="flex flex-col justify-center pt-6 sm:flex-row lg:justify-start">
+          <div class="flex items-center justify-center sm:justify-start">
+            <a href="https://irvanshandika.my.id" class="font-body text-lg font-semibold uppercase text-grey-20"> Connect with me </a>
+            <div class="hidden sm:block">
+              <i class="bx bx-chevron-right text-2xl text-primary"></i>
+            </div>
+          </div>
+          <div class="flex items-center justify-center pt-5 pl-2 sm:justify-start sm:pt-0">
+            <a href="/">
+              <i class="bx bxl-facebook-square text-2xl text-primary hover:text-yellow"></i>
+            </a>
+            <a href="/" class="pl-4">
+              <i class="bx bxl-twitter text-2xl text-primary hover:text-yellow"></i>
+            </a>
+            <a href="/" class="pl-4">
+              <i class="bx bxl-dribbble text-2xl text-primary hover:text-yellow"></i>
+            </a>
+            <a href="/" class="pl-4">
+              <i class="bx bxl-linkedin text-2xl text-primary hover:text-yellow"></i>
+            </a>
+            <a href="/" class="pl-4">
+              <i class="bx bxl-instagram text-2xl text-primary hover:text-yellow"></i>
+            </a>
+          </div>
         </div>
-        <div v-if="about && about.konten" class="p-2">
-          <p class="text-center">
-            {{ about.konten }}
-          </p>
+      </div>
+      <div class="w-full pl-0 pt-10 sm:w-3/4 lg:w-2/5 lg:pl-12 lg:pt-0">
+        <div v-for="item in skill" :key="item.id">
+          <div class="flex items-end justify-between">
+            <h4 class="font-body font-semibold uppercase text-base lg:text-xl text-black">{{ item.judul }}</h4>
+            <h3 class="font-body text-base font-bold text-primary">{{ item.konten }}</h3>
+          </div>
+          <div class="mt-2 bg-lila w-full bg-gray-200 rounded-full h-2.5">
+            <div class="bg-blue-600 h-2.5 rounded-full" style="width: {{item.konten}}"></div>
+          </div>
         </div>
       </div>
     </div>
