@@ -3,6 +3,7 @@ import { Head, Link } from "@inertiajs/vue3";
 import { onMounted, ref } from "vue";
 import { LottieAnimation } from "lottie-web-vue";
 import WatermelonJSON from "/public/img/robot.json";
+import ApplicationLogo from "@/Components/ApplicationLogo.vue";
 
 // Menginisialisasi variabel anim sebagai referensi Vue
 let anim = ref();
@@ -54,7 +55,8 @@ const showingNavigationDropdown = ref(false);
   <nav class="bg-white border-gray-200">
     <div class="max-w-screen-xl flex flex-wrap items-center justify-between lg:mx-32 p-4">
       <a href="https://irvanshandika.my.id" class="flex items-center">
-        <img src="../../Components/images/logo.png" class="h-8 mr-3" alt="Irvan" />
+        <!-- <img src="../../Components/images/logo.png" class="h-8 mr-3" alt="Irvan" /> -->
+        <ApplicationLogo class="w-[130px] lg:w-[150px] h-[50px]" />
       </a>
       <button
         @click="showingNavigationDropdown = !showingNavigationDropdown"
@@ -88,11 +90,11 @@ const showingNavigationDropdown = ref(false);
               <Link
                 v-if="$page.props.auth.user"
                 :href="route('dashboard')"
-                class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-md text-sm px-4 py-2 text-center mr-3 md:mr-0">
+                class="text-white bg-[#C84771] hover:bg-[#ff0655d4] focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-md text-sm px-4 py-2 text-center mr-3 md:mr-0">
                 Dashboard
               </Link>
               <template v-else>
-                <Link :href="route('login')" type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-md text-sm px-4 py-2 text-center mr-3 md:mr-0"> Log in</Link>
+                <Link :href="route('login')" type="button" class="text-white bg-[#C84771] hover:bg-[#ff0655d4] focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-md text-sm px-4 py-2 text-center mr-3 md:mr-0"> Log in</Link>
               </template>
             </div>
           </li>
@@ -104,14 +106,10 @@ const showingNavigationDropdown = ref(false);
     <div class="container mx-auto px-5 py-5">
       <div class="py-1 px-4 mx-auto max-w-screen-xl lg:py-16 grid lg:grid-cols-2 gap-12 lg:gap-16">
         <div class="flex flex-col justify-center">
-          <h1 class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl">
-            Halo 👋🏻 Perkenalkan Aku Irvan
-          </h1>
-          <p class="mb-8 text-lg font-normal text-gray-500 lg:text-xl">
-            Mahasiswa Universitas AMIKOM Yogyakarta dan menggambil jurusan S1 Informatika
-          </p>
+          <h1 class="mb-4 text-4xl font-normal tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl">Halo 👋🏻 Perkenalkan Aku <span class="text-[#C84771] font-bold">Irvan</span></h1>
+          <p class="mb-8 text-lg font-normal text-gray-500 lg:text-xl">Mahasiswa Universitas AMIKOM Yogyakarta dan menggambil jurusan S1 Informatika</p>
           <div class="flex flex-col space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4">
-            <a href="#" class="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300">
+            <a href="#" class="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg bg-[#C84771] hover:bg-[#ff0655d4] focus:ring-4 focus:ring-blue-300">
               Get started
               <svg class="w-3.5 h-3.5 ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
@@ -165,7 +163,7 @@ const showingNavigationDropdown = ref(false);
             <h3 class="font-body text-base font-bold text-primary">{{ item.konten }}</h3>
           </div>
           <div class="mt-2 bg-lila w-full bg-gray-200 rounded-full h-2.5">
-            <div class="bg-blue-600 h-2.5 rounded-full" style="width: {{item.konten}}"></div>
+            <div class="bg-[#C84771] h-2.5 rounded-full" style="width: {{item.konten}}"></div>
           </div>
         </div>
       </div>
@@ -175,8 +173,8 @@ const showingNavigationDropdown = ref(false);
     <div className="block max-w-7xl py-28 mx-auto mt-4 bg-white">
       <div className="flex flex-col items-center pb-10">
         <div className="py-8 lg:py-16 px-4 mx-auto max-w-screen-md">
-          <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-center text-gray-900">Hubungi <span className="text-blue-500">Saya</span></h2>
-          <p className="mb-8 lg:mb-16 font-light text-center text-gray-500 dark:text-gray-400 sm:text-xl">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate, ex!</p>
+          <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-center text-gray-900">Hubungi <span className="text-[#C84771]">Saya</span></h2>
+          <p className="mb-8 lg:mb-16 font-light text-center text-gray-500  sm:text-xl">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate, ex!</p>
           <div className="hidden" id="alert">
             <div className="flex items-center p-4 mb-4 text-sm text-white rounded-lg bg-green-500" role="alert">
               <svg className="flex-shrink-0 inline w-4 h-4 mr-3" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
@@ -190,38 +188,38 @@ const showingNavigationDropdown = ref(false);
           </div>
           <form className="form space-y-8">
             <div>
-              <label for="name" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"> Your Name </label>
+              <label for="name" className="block mb-2 text-sm font-medium text-gray-900"> Your Name </label>
               <input
                 name="nama"
                 type="text"
                 id="name"
-                className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"
+                className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5"
                 placeholder="Jhon Doe"
                 required />
             </div>
             <div>
-              <label for="email" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"> Your Email </label>
+              <label for="email" className="block mb-2 text-sm font-medium text-gray-900"> Your Email </label>
               <input
                 name="email"
                 type="email"
                 id="email"
-                className="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"
+                className="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500"
                 placeholder="jhondoe@domain.com"
                 required />
             </div>
             <div className="sm:col-span-2">
-              <label for="message" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400"> Your message </label>
+              <label for="message" className="block mb-2 text-sm font-medium text-gray-900 "> Your message </label>
               <textarea
                 name="pesan"
                 id="message"
                 rows="6"
-                className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500"
                 placeholder="Leave a comment..."></textarea>
             </div>
             <button
               type="submit"
               id="btn-kirim"
-              className="py-3 px-5 text-sm font-medium text-center text-black rounded-lg bg-blue-400 sm:w-fit hover:bg-blue-500 focus:ring-4 focus:outline-none focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">
+              className="py-3 px-5 text-sm font-medium text-center text-white rounded-lg bg-[#C84771] sm:w-fit hover:bg-[#ff0655d4] focus:ring-4 focus:outline-none focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">
               Send Message
             </button>
           </form>
@@ -237,7 +235,7 @@ const showingNavigationDropdown = ref(false);
             <Logo />
           </div>
           <div className="text-sm text-gray-600">
-            <img src="../../Components/images/logo.png" class="h-8 mr-3" alt=" Logo" />
+            <ApplicationLogo class="w-[130px] lg:w-[150px] h-[50px]" />
             <span class="self-center text-2xl font-semibold whitespace-nowrap text-black uppercase">M. Irvan Shandika</span>
           </div>
         </div>
