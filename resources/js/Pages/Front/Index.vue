@@ -27,6 +27,7 @@ const props = defineProps({
   slider: Array,
   about: Array,
   skill: Array,
+  posts: Array,
 
   laravelVersion: { type: String, required: true },
   phpVersion: { type: String, required: true },
@@ -51,7 +52,7 @@ const showingNavigationDropdown = ref(false);
 </script>
 
 <template>
-  <Head title="Welcome" />
+  <Head title="M. Irvan Shandika | Portfolio" />
   <nav class="bg-white border-gray-200">
     <div class="max-w-screen-xl flex flex-wrap items-center justify-between lg:mx-32 p-4">
       <a href="https://irvanshandika.my.id" class="flex items-center">
@@ -71,19 +72,19 @@ const showingNavigationDropdown = ref(false);
       <div :class="{ block: showingNavigationDropdown, hidden: !showingNavigationDropdown }" class="sm:hidden w-full md:block md:w-auto" id="navbarDefault">
         <ul class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white">
           <li>
-            <a href="#" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-blue-500 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0">Home</a>
+            <a href="#" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-[#C84771] md:hover:bg-transparent md:border-0 md:hover:text-[#C84771] md:p-0">Home</a>
           </li>
           <li>
-            <a href="#aboutme" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-blue-500 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0">About</a>
+            <a href="#aboutme" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-[#C84771] md:hover:bg-transparent md:border-0 md:hover:text-[#C84771] md:p-0">About</a>
           </li>
           <li>
-            <a href="#" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-blue-500 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0">Services</a>
+            <a href="#" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-[#C84771] md:hover:bg-transparent md:border-0 md:hover:text-[#C84771] md:p-0">Services</a>
           </li>
           <li>
-            <a href="#" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-blue-500 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0">Pricing</a>
+            <a href="#project" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-[#C84771] md:hover:bg-transparent md:border-0 md:hover:text-[#C84771] md:p-0">Project</a>
           </li>
           <li>
-            <a href="#contact" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-blue-500 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 mb-5">Contact</a>
+            <a href="#contact" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-[#C84771] md:hover:bg-transparent md:border-0 md:hover:text-[#C84771] md:p-0 mb-5">Contact</a>
           </li>
           <li>
             <div v-if="canLogin">
@@ -94,7 +95,9 @@ const showingNavigationDropdown = ref(false);
                 Dashboard
               </Link>
               <template v-else>
-                <Link :href="route('login')" type="button" class="text-white bg-[#C84771] hover:bg-[#ff0655d4] focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-md text-sm px-4 py-2 text-center mr-3 md:mr-0"> Log in</Link>
+                <Link :href="route('login')" type="button" class="text-white bg-[#C84771] hover:bg-[#ff0655d4] focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-md text-sm px-4 py-2 text-center mr-3 md:mr-0">
+                  Log in</Link
+                >
               </template>
             </div>
           </li>
@@ -105,9 +108,9 @@ const showingNavigationDropdown = ref(false);
   <section class="bg-white">
     <div class="container mx-auto px-5 py-5">
       <div class="py-1 px-4 mx-auto max-w-screen-xl lg:py-16 grid lg:grid-cols-2 gap-12 lg:gap-16">
-        <div class="flex flex-col justify-center">
-          <h1 class="mb-4 text-4xl font-normal tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl">Halo 👋🏻 Perkenalkan Aku <span class="text-[#C84771] font-bold">Irvan</span></h1>
-          <p class="mb-8 text-lg font-normal text-gray-500 lg:text-xl">Mahasiswa Universitas AMIKOM Yogyakarta dan menggambil jurusan S1 Informatika</p>
+        <div class="flex flex-col justify-center order-2 lg:order-1">
+          <h1 class="mb-4 text-4xl font-normal tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl lg:text-left">Halo 👋🏻 Perkenalkan Aku <span class="text-[#C84771] font-bold">Irvan</span></h1>
+          <p class="mb-8 text-lg font-normal text-gray-500 lg:text-xl lg:text-left">Mahasiswa Universitas AMIKOM Yogyakarta dan menggambil jurusan S1 Informatika</p>
           <div class="flex flex-col space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4">
             <a href="#" class="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg bg-[#C84771] hover:bg-[#ff0655d4] focus:ring-4 focus:ring-blue-300">
               Get started
@@ -118,7 +121,7 @@ const showingNavigationDropdown = ref(false);
             <a href="#" class="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-gray-900 rounded-lg border border-gray-300 hover:bg-gray-100 focus:ring-4 focus:ring-gray-100"> Learn more </a>
           </div>
         </div>
-        <div>
+        <div class="order-1 lg:order-2">
           <LottieAnimation :animation-data="WatermelonJSON" :auto-play="true" :height="100" :loop="true" :speed="1" ref="anim" />
         </div>
       </div>
@@ -128,43 +131,94 @@ const showingNavigationDropdown = ref(false);
     <div class="mx-auto max-w-screen-xl container flex flex-col items-center py-16 md:py-20 lg:flex-row">
       <div class="w-full text-center sm:w-3/4 lg:w-3/5 lg:text-left">
         <h2 class="font-header text-4xl font-semibold uppercase text-primary sm:text-5xl lg:text-6xl">Who am I?</h2>
-        <h4 v-if="about && about.judul" class="pt-6 font-header text-xl font-medium text-black sm:text-2xl lg:text-3xl">{{ about.judul }}</h4>
-        <p v-if="about && about.konten" class="pt-6 font-body leading-relaxed text-grey-20">{{ about.konten }}</p>
+        <h4 class="pt-6 font-header text-xl font-medium text-black sm:text-2xl lg:text-3xl">Seorang Frontend Web Developer Junior</h4>
+        <p class="pt-6 font-body leading-relaxed text-grey-20">Teknologi Yang Saya Gunakan Untuk Membuat Sebuah Website</p>
         <div class="flex flex-col justify-center pt-6 sm:flex-row lg:justify-start">
           <div class="flex items-center justify-center sm:justify-start">
-            <a href="https://irvanshandika.my.id" class="font-body text-lg font-semibold uppercase text-grey-20"> Connect with me </a>
+            <a href="https://irvanshandika.my.id" class="font-body text-lg font-semibold uppercase text-white bg-[#C84771] hover:bg-[#ff0655d4] px-8 py-3 rounded-md"> Connect with me </a>
             <div class="hidden sm:block">
               <i class="bx bx-chevron-right text-2xl text-primary"></i>
             </div>
           </div>
-          <div class="flex items-center justify-center pt-5 pl-2 sm:justify-start sm:pt-0">
-            <a href="/">
-              <i class="bx bxl-facebook-square text-2xl text-primary hover:text-yellow"></i>
-            </a>
-            <a href="/" class="pl-4">
-              <i class="bx bxl-twitter text-2xl text-primary hover:text-yellow"></i>
-            </a>
-            <a href="/" class="pl-4">
-              <i class="bx bxl-dribbble text-2xl text-primary hover:text-yellow"></i>
-            </a>
-            <a href="/" class="pl-4">
-              <i class="bx bxl-linkedin text-2xl text-primary hover:text-yellow"></i>
-            </a>
-            <a href="/" class="pl-4">
-              <i class="bx bxl-instagram text-2xl text-primary hover:text-yellow"></i>
-            </a>
-          </div>
         </div>
       </div>
       <div class="w-full pl-0 pt-10 sm:w-3/4 lg:w-2/5 lg:pl-12 lg:pt-0">
-        <div v-for="item in skill" :key="item.id">
+        <div>
+          <!-- HTML -->
           <div class="flex items-end justify-between">
-            <h4 class="font-body font-semibold uppercase text-base lg:text-xl text-black">{{ item.judul }}</h4>
-            <h3 class="font-body text-base font-bold text-primary">{{ item.konten }}</h3>
+            <h4 class="font-body font-semibold uppercase text-base lg:text-xl text-black">HTML</h4>
+            <h3 class="font-body text-base font-bold text-primary">100%</h3>
           </div>
           <div class="mt-2 bg-lila w-full bg-gray-200 rounded-full h-2.5">
-            <div class="bg-[#C84771] h-2.5 rounded-full" style="width: {{item.konten}}"></div>
+            <div class="bg-[#C84771] h-2.5 rounded-full" style="width: 100%"></div>
           </div>
+          <!-- CSS -->
+          <div class="flex items-end justify-between">
+            <h4 class="font-body font-semibold uppercase text-base lg:text-xl text-black">CSS</h4>
+            <h3 class="font-body text-base font-bold text-primary">95%</h3>
+          </div>
+          <div class="mt-2 bg-lila w-full bg-gray-200 rounded-full h-2.5">
+            <div class="bg-[#C84771] h-2.5 rounded-full" style="width: 95%"></div>
+          </div>
+          <!-- JavaScript -->
+          <div class="flex items-end justify-between">
+            <h4 class="font-body font-semibold uppercase text-base lg:text-xl text-black">JavaScript</h4>
+            <h3 class="font-body text-base font-bold text-primary">70%</h3>
+          </div>
+          <div class="mt-2 bg-lila w-full bg-gray-200 rounded-full h-2.5">
+            <div class="bg-[#C84771] h-2.5 rounded-full" style="width: 70%"></div>
+          </div>
+          <!-- React Js -->
+          <div class="flex items-end justify-between">
+            <h4 class="font-body font-semibold uppercase text-base lg:text-xl text-black">React JS</h4>
+            <h3 class="font-body text-base font-bold text-primary">90%</h3>
+          </div>
+          <div class="mt-2 bg-lila w-full bg-gray-200 rounded-full h-2.5">
+            <div class="bg-[#C84771] h-2.5 rounded-full" style="width: 90%"></div>
+          </div>
+          <!-- Next Js -->
+          <div class="flex items-end justify-between">
+            <h4 class="font-body font-semibold uppercase text-base lg:text-xl text-black">Next JS</h4>
+            <h3 class="font-body text-base font-bold text-primary">90%</h3>
+          </div>
+          <div class="mt-2 bg-lila w-full bg-gray-200 rounded-full h-2.5">
+            <div class="bg-[#C84771] h-2.5 rounded-full" style="width: 90%"></div>
+          </div>
+          <!-- Tailwindcss -->
+          <div class="flex items-end justify-between">
+            <h4 class="font-body font-semibold uppercase text-base lg:text-xl text-black">Tailwindcss</h4>
+            <h3 class="font-body text-base font-bold text-primary">85%</h3>
+          </div>
+          <div class="mt-2 bg-lila w-full bg-gray-200 rounded-full h-2.5">
+            <div class="bg-[#C84771] h-2.5 rounded-full" style="width: 85%"></div>
+          </div>
+          <!-- Bootstrap -->
+          <div class="flex items-end justify-between">
+            <h4 class="font-body font-semibold uppercase text-base lg:text-xl text-black">Bootstrap</h4>
+            <h3 class="font-body text-base font-bold text-primary">70%</h3>
+          </div>
+          <div class="mt-2 bg-lila w-full bg-gray-200 rounded-full h-2.5">
+            <div class="bg-[#C84771] h-2.5 rounded-full" style="width: 70%"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="project" class="mt-32 lg:mt-8">
+    <h1 class="text-center font-bold text-3xl">My Project</h1>
+    <div class="flex flex-wrap gap-4 my-10 justify-evenly">
+      <div v-for="post in posts" :key="post.id" class="max-w-sm overflow-hidden rounded shadow-lg">
+        <div class="px-6 py-4">
+          <div class="mb-2 text-xl font-bold" v-if="post && post.judul">
+            {{ post.judul }}
+          </div>
+          <p class="text-base text-gray-700" v-if="post && post.konten">
+            {{ post.konten }}
+          </p>
+          <p class="text-sm text-zinc-400" v-if="post && post.penulis">Author: {{ post.penulis }}</p>
+        </div>
+        <div class="px-6 pt-4 pb-2">
+          <span v-if="post && post.kategori" class="inline-block px-4 py-1.5 mb-2 mr-2 text-sm font-semibold text-white bg-[#C84771] rounded-md">#{{ post.kategori }}</span>
         </div>
       </div>
     </div>

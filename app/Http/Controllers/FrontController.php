@@ -26,12 +26,14 @@ class FrontController extends Controller
 
         // Mengambil data post dengan kategori 'skill' dari database
         $skill = Post::where('kategori', 'skill')->get();
+        $posts = Post::all();
 
         // Menggabungkan data post ke dalam array $data
         $data = array(
             'slider' => $slider,
             'about' => $about,
             'skill' => $skill,
+            'posts' => $posts,
              // Menentukan apakah opsi login tersedia dengan memeriksa rute 'login'
             'canLogin' => Route::has('login'),
             
