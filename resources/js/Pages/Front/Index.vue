@@ -204,8 +204,8 @@ const showingNavigationDropdown = ref(false);
       </div>
     </div>
   </section>
-  <section id="project" class="mt-32 lg:mt-8">
-    <h1 class="text-center font-bold text-3xl">My Project</h1>
+  <section class="container mt-32" id="blogs">
+    <h1 class="text-4xl font-extrabold text-center text-purple-800" v-if="posts">Blogs</h1>
     <div class="flex flex-wrap gap-4 my-10 justify-evenly">
       <div v-for="post in posts" :key="post.id" class="max-w-sm overflow-hidden rounded shadow-lg">
         <div class="px-6 py-4">
@@ -218,7 +218,7 @@ const showingNavigationDropdown = ref(false);
           <p class="text-sm text-zinc-400" v-if="post && post.penulis">Author: {{ post.penulis }}</p>
         </div>
         <div class="px-6 pt-4 pb-2">
-          <span v-if="post && post.kategori" class="inline-block px-4 py-1.5 mb-2 mr-2 text-sm font-semibold text-white bg-[#C84771] rounded-md">#{{ post.kategori }}</span>
+          <span v-if="post && post.kategori" class="inline-block px-3 py-1 mb-2 mr-2 text-sm font-semibold text-gray-700 bg-purple-200 rounded-full">#{{ post.kategori }}</span>
         </div>
       </div>
     </div>
